@@ -21,7 +21,8 @@
 	"extensions": [
 		"ms-azuretools.vscode-docker",
 		"googlecloudtools.cloudcode",
-		"ms-python.python"
+		"ms-python.python",
+		"eamodio.gitlens"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
