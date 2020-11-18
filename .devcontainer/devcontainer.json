@@ -21,7 +21,9 @@
 	"extensions": [
 		"ms-azuretools.vscode-docker",
 		"googlecloudtools.cloudcode",
-		"ms-python.python"
+		"ms-python.python",
+		"github.vscode-pull-request-github",
+		"cschleiden.vscode-github-actions"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
