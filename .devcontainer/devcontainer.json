@@ -20,7 +20,7 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-azuretools.vscode-docker",
-		"googlecloudtools.cloudcode",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
 		"ms-python.python",
 		"eamodio.gitlens",
 		"github.vscode-pull-request-github"
