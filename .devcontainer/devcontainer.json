@@ -14,7 +14,7 @@
 	},
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+		"terminal.integrated.shell.linux": "/usr/bin/zsh"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
@@ -24,8 +24,8 @@
 		"ms-python.python",
 		"eamodio.gitlens",
 		"github.vscode-pull-request-github",
-		"ms-python.vscode-pylance"
-
+		"ms-python.vscode-pylance",
+		"hashicorp.terraform"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

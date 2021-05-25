@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 
 # Install Docker CE CLI, PIP
 RUN apt-get update \
-    && apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release \
+    && apt-get install -y wget apt-transport-https ca-certificates curl gnupg2 lsb-release \
     && curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null \
     && echo "deb [arch=amd64] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list \
     && apt-get update \
@@ -22,3 +22,10 @@ RUN curl -sSL -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernete
 RUN curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash -
 COPY copy-kube-config.sh /usr/local/share/
 RUN echo "source /usr/local/share/copy-kube-config.sh" | tee -a /root/.bashrc >> /root/.zshrc
+
+# Install Terraform
+RUN wget https://releases.hashicorp.com/terraform/0.13.6/terraform_0.13.6_linux_amd64.zip \
+    && unzip terraform_0.13.6_linux_amd64.zip \
+    && mv terraform /usr/local/bin/terraform-0.13.6 \
+    && rm -f /usr/local/bin/terraform \
+    && ln -s /usr/local/bin/terraform-0.13.6 /usr/local/bin/terraform 
